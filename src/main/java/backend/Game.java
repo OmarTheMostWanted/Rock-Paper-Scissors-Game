@@ -8,7 +8,12 @@ public class Game {
     private int player1result;
     private int player2result;
 
-
+    /**
+     * constructor takes two players and initialize the game.
+     *
+     * @param player1 player one
+     * @param player2 player two
+     */
     public Game(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
@@ -57,47 +62,63 @@ public class Game {
         this.player2result = player2result;
     }
 
-    public void chooseWinner () {
+    /**
+     * checks the winners on current round.
+     */
+    public void playGame() {
 
         try {
 
-
+            this.setRoundCount(this.getRoundCount() + 1);
             if (player1.getMove().getChoice().equals(player2.getMove().getChoice())) {
                 return;
             }
 
-            if (player1.getMove().getChoice() instanceof Paper && player2.getMove().getChoice() instanceof Rock) {
+            if (player1.getMove().getChoice() instanceof Paper
+                    && player2.getMove().getChoice() instanceof Rock) {
 
                 this.setPlayer1result(this.getPlayer1result() + 1);
-                //    return player1;
+                return;
             }
-            if (player1.getMove().getChoice() instanceof Rock && player2.getMove().getChoice() instanceof Scissors) {
+            if (player1.getMove().getChoice() instanceof Rock
+                    && player2.getMove().getChoice() instanceof Scissors) {
                 this.setPlayer1result(this.getPlayer1result() + 1);
-                //    return player1;
+                return;
             }
-            if (player1.getMove().getChoice() instanceof Scissors && player2.getMove().getChoice() instanceof Paper) {
+            if (player1.getMove().getChoice() instanceof Scissors
+                    && player2.getMove().getChoice() instanceof Paper) {
                 this.setPlayer1result(this.getPlayer1result() + 1);
-                //    return player1;
+                return;
             }
             this.setPlayer2result(this.getPlayer2result() + 1);
-            //return player2;
-            this.setRoundCount(this.getRoundCount() + 1);
 
-        }
-        catch (NullPointerException e) {
+
+        } catch (NullPointerException e) {
             e.printStackTrace();
             System.out.println(this);
         }
     }
 
+    /**checks the winner with the highest score.
+     *
+     * @return winner or default incas of a draw
+     */
+    public Player getWinner() {
+        if (this.player1result > this.player2result) {
+            return player1;
+        }
+        if (this.player1result < this.player2result) {
+            return player2;
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
-        return "Game{" +
-                "player1=" + player1 +
-                ", player2=" + player2 +
-                ", roundCount=" + roundCount +
-                ", player1result=" + player1result +
-                ", player2result=" + player2result +
-                '}';
+        return "Game{"
+                + "player1=" + player1 + ", player2=" + player2
+                + ", roundCount="
+                + roundCount + ", player1result="
+                + player1result + ", player2result=" + player2result + '}';
     }
 }

@@ -29,12 +29,16 @@ public class Player {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Player player = (Player) o;
-        return Objects.equals(getName(), player.getName()) &&
-                Objects.equals(getMove(), player.getMove());
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        Player player = (Player) object;
+        return Objects.equals(getName(), player.getName())
+                && Objects.equals(getMove(), player.getMove());
     }
 
     @Override
@@ -44,9 +48,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" +
-                "name='" + name + '\'' +
-                ", move=" + move +
-                '}';
+        return "Player{" + "name='" + name + '\'' + ", move=" + move + '}';
     }
 }

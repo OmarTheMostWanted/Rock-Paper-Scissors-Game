@@ -10,8 +10,6 @@ public class Rock extends Choice {
 
     @Override
     public String toString() {
-        return "Rock{" +
-                "name='" + name + '\'' +
-                '}';
+        return "Rock{" + "name='" + name + '\'' + '}';
     }
 }

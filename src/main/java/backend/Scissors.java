@@ -9,8 +9,6 @@ public class Scissors extends Choice {
 
     @Override
     public String toString() {
-        return "Scissors{" +
-                "name='" + name + '\'' +
-                '}';
+        return "Scissors{" + "name='" + name + '\'' + '}';
     }
 }

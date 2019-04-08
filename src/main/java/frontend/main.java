@@ -2,6 +2,8 @@ package frontend;
 
 import backend.*;
 
+import java.util.Scanner;
+
 public class main {
 
     public static void main(String[] args) {
@@ -13,17 +15,55 @@ public class main {
         Scissors scissors = new Scissors();
 
 
-        player1.setMove(new Move(paper));
-        player2.setMove(new Move(rock));
-
         Game game = new Game(player1, player2);
 
         System.out.println(game);
 
-        System.out.println("=============== play game");
-        game.chooseWinner();
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println(game);
+
+        while (true) {
+            int a = scanner.nextInt();
+
+            if (a == 1) {
+                player1.setMove(new Move(rock));
+            }
+            if (a == 2) {
+                player1.setMove(new Move(paper));
+            }
+            if (a == 3) {
+                player1.setMove(new Move(scissors));
+            }
+            if (a == 0) {
+                System.out.println(game.getWinner());
+                scanner.close();
+                System.exit(0);
+            }
+
+            int b = scanner.nextInt();
+
+            if (b == 1) {
+                player2.setMove(new Move(rock));
+            }
+            if (b == 2) {
+                player2.setMove(new Move(paper));
+            }
+            if (b == 3) {
+                player2.setMove(new Move(scissors));
+            }
+            if (b == 0 || a == 0) {
+
+                System.out.println(game.getWinner());
+                scanner.close();
+                System.exit(0);
+            }
+
+            System.out.println("Played Game");
+            game.playGame();
+
+            System.out.println(game);
+
+        }
 
     }
 

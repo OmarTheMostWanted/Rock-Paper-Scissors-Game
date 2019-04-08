@@ -18,8 +18,6 @@ public class Move {
 
     @Override
     public String toString() {
-        return "Move{" +
-                "choice=" + choice +
-                '}';
+        return "Move{" + "choice=" + choice + '}';
     }
 }

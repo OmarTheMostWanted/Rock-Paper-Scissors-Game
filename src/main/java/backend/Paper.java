@@ -10,8 +10,6 @@ public class Paper extends Choice {
 
     @Override
     public String toString() {
-        return "Paper{" +
-                "name='" + name + '\'' +
-                '}';
+        return "Paper{" + "name='" + name + '\'' + '}';
     }
 }
