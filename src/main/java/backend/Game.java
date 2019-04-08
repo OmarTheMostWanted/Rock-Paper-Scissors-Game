@@ -59,25 +59,35 @@ public class Game {
 
     public void chooseWinner () {
 
-        if (player1.getMove().getChoice().equals(player2.getMove().getChoice())){
-            return;
-        }
+        try {
 
-        if (player1.getMove().getChoice() instanceof Paper && player2.getMove().getChoice() instanceof Rock){
 
-            this.setPlayer1result(this.getPlayer1result() + 1);
-        //    return player1;
+            if (player1.getMove().getChoice().equals(player2.getMove().getChoice())) {
+                return;
+            }
+
+            if (player1.getMove().getChoice() instanceof Paper && player2.getMove().getChoice() instanceof Rock) {
+
+                this.setPlayer1result(this.getPlayer1result() + 1);
+                //    return player1;
+            }
+            if (player1.getMove().getChoice() instanceof Rock && player2.getMove().getChoice() instanceof Scissors) {
+                this.setPlayer1result(this.getPlayer1result() + 1);
+                //    return player1;
+            }
+            if (player1.getMove().getChoice() instanceof Scissors && player2.getMove().getChoice() instanceof Paper) {
+                this.setPlayer1result(this.getPlayer1result() + 1);
+                //    return player1;
+            }
+            this.setPlayer2result(this.getPlayer2result() + 1);
+            //return player2;
+            this.setRoundCount(this.getRoundCount() + 1);
+
         }
-        if (player1.getMove().getChoice() instanceof Rock && player2.getMove().getChoice() instanceof Scissors){
-            this.setPlayer1result(this.getPlayer1result() + 1);
-        //    return player1;
+        catch (NullPointerException e) {
+            e.printStackTrace();
+            System.out.println(this);
         }
-        if (player1.getMove().getChoice() instanceof Scissors && player2.getMove().getChoice() instanceof Paper){
-            this.setPlayer1result(this.getPlayer1result() + 1);
-        //    return player1;
-        }
-        this.setPlayer2result(this.getPlayer2result() + 1);
-        //return player2;
     }
 
     @Override

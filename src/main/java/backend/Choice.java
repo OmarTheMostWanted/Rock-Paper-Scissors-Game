@@ -1,6 +1,6 @@
 package backend;
 
-public class Choice {
+public abstract class Choice {
 
     public Choice() {
     }

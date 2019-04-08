@@ -14,13 +14,14 @@ public class main {
 
 
         player1.setMove(new Move(paper));
-        player1.setMove(new Move(rock));
+        player2.setMove(new Move(rock));
 
-        Game game = new Game(player1 , player2);
+        Game game = new Game(player1, player2);
 
         System.out.println(game);
 
         System.out.println("=============== play game");
+        game.chooseWinner();
 
         System.out.println(game);
 
