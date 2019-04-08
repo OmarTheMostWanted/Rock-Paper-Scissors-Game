@@ -4,12 +4,13 @@ import backend.*;
 
 import java.util.Scanner;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
-        Player player1 = new Player("player1");
-        Player player2 = new Player("player2");
-
+//        Player player1 = new Player(args[0]);
+//        Player player2 = new Player(args[1]);
+        Player player1 = new Player("p1");
+        Player player2 = new Player("p2");
         Paper paper = new Paper();
         Rock rock = new Rock();
         Scissors scissors = new Scissors();
@@ -51,7 +52,7 @@ public class main {
             if (b == 3) {
                 player2.setMove(new Move(scissors));
             }
-            if (b == 0 || a == 0) {
+            if (b == 0) {
 
                 System.out.println(game.getWinner());
                 scanner.close();
