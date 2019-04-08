@@ -70,29 +70,17 @@ public class Game {
         try {
 
             this.setRoundCount(this.getRoundCount() + 1);
-            if (player1.getMove().getChoice().equals(player2.getMove().getChoice())) {
-                return;
+            if(player1.getMove() == player2.getMove()) {
+                //No score affected
             }
-
-            if (player1.getMove().getChoice() instanceof Paper
-                    && player2.getMove().getChoice() instanceof Rock) {
-
+            else if(player1.getMove() == Move.PAPER && player2.getMove() == Move.ROCK ||
+                    player1.getMove() == Move.ROCK && player2.getMove() == Move.SCISSORS ||
+                    player1.getMove() == Move.SCISSORS && player2.getMove() == Move.PAPER){
                 this.setPlayer1result(this.getPlayer1result() + 1);
-                return;
             }
-            if (player1.getMove().getChoice() instanceof Rock
-                    && player2.getMove().getChoice() instanceof Scissors) {
-                this.setPlayer1result(this.getPlayer1result() + 1);
-                return;
+            else{
+                this.setPlayer2result(this.getPlayer2result() + 1);
             }
-            if (player1.getMove().getChoice() instanceof Scissors
-                    && player2.getMove().getChoice() instanceof Paper) {
-                this.setPlayer1result(this.getPlayer1result() + 1);
-                return;
-            }
-            this.setPlayer2result(this.getPlayer2result() + 1);
-
-
         } catch (NullPointerException e) {
             e.printStackTrace();
             System.out.println(this);
