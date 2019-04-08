@@ -4,7 +4,7 @@ import backend.*;
 
 import java.util.Scanner;
 
-public class Main {
+public class Application {
 
     public static void main(String[] args) {
 //        Player player1 = new Player(args[0]);
