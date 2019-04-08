@@ -6,4 +6,11 @@ public class Scissors extends Choice {
     public Scissors() {
         this.name = "Scissors";
     }
+
+    @Override
+    public String toString() {
+        return "Scissors{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

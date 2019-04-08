@@ -7,4 +7,11 @@ public class Rock extends Choice {
     public Rock() {
         this.name = "Rock";
     }
+
+    @Override
+    public String toString() {
+        return "Rock{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

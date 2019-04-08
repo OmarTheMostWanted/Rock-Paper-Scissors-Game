@@ -57,27 +57,37 @@ public class Game {
         this.player2result = player2result;
     }
 
-    public Player chooseWinner () {
+    public void chooseWinner () {
 
         if (player1.getMove().getChoice().equals(player2.getMove().getChoice())){
-            return null;
+            return;
         }
 
         if (player1.getMove().getChoice() instanceof Paper && player2.getMove().getChoice() instanceof Rock){
 
             this.setPlayer1result(this.getPlayer1result() + 1);
-            return player1;
+        //    return player1;
         }
         if (player1.getMove().getChoice() instanceof Rock && player2.getMove().getChoice() instanceof Scissors){
             this.setPlayer1result(this.getPlayer1result() + 1);
-            return player1;
+        //    return player1;
         }
         if (player1.getMove().getChoice() instanceof Scissors && player2.getMove().getChoice() instanceof Paper){
             this.setPlayer1result(this.getPlayer1result() + 1);
-            return player1;
+        //    return player1;
         }
         this.setPlayer2result(this.getPlayer2result() + 1);
-        return player2;
+        //return player2;
     }
 
+    @Override
+    public String toString() {
+        return "Game{" +
+                "player1=" + player1 +
+                ", player2=" + player2 +
+                ", roundCount=" + roundCount +
+                ", player1result=" + player1result +
+                ", player2result=" + player2result +
+                '}';
+    }
 }

@@ -7,9 +7,9 @@ public class Player {
     private String name;
     private Move move;
 
-    public Player(String name, Move move) {
+    public Player(String name) {
         this.name = name;
-        this.move = move;
+        this.move = null;
     }
 
     public String getName() {

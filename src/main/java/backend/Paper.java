@@ -8,5 +8,10 @@ public class Paper extends Choice {
         this.name = "Paper";
     }
 
-
+    @Override
+    public String toString() {
+        return "Paper{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

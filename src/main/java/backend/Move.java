@@ -4,7 +4,7 @@ public class Move {
 
     private Choice choice;
 
-    public Move() {
+    public Move(Choice choice) {
         this.choice = choice;
     }
 
@@ -14,5 +14,12 @@ public class Move {
 
     public void setChoice(Choice choice) {
         this.choice = choice;
+    }
+
+    @Override
+    public String toString() {
+        return "Move{" +
+                "choice=" + choice +
+                '}';
     }
 }

@@ -11,4 +11,6 @@ public class Choice {
         if (o == null || getClass() != o.getClass()) return false;
         return true;
     }
+
+
 }
