@@ -2,18 +2,19 @@ package frontend;
 
 import backend.*;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.Scanner;
 
 public class Application {
 
     public static void main(String[] args) {
 
+
         Player player1 = new Player("p1");
         Player player2 = new Player("p2");
 
         Game game = new Game(player1, player2);
-
-        System.out.println(game);
 
         Scanner scanner = new Scanner(System.in);
 
